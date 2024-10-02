@@ -1,0 +1,82 @@
+{
+  "api": {
+    "aidebate": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "aidebate"
+        }
+      ],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            },
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authaidebate"
+              }
+            }
+          ],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 30,
+              "description": "api key description"
+            },
+            "authenticationType": "API_KEY"
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  },
+  "auth": {
+    "aidebate": {
+      "customAuth": false,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "serviceType": "imported"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_auth_aidebate_nativeClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "aidebate"
+        }
+      ]
+    },
+    "AMPLIFY_auth_aidebate_userPoolId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "aidebate"
+        }
+      ]
+    },
+    "AMPLIFY_auth_aidebate_userPoolName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "aidebate"
+        }
+      ]
+    },
+    "AMPLIFY_auth_aidebate_webClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "aidebate"
+        }
+      ]
+    }
+  }
+}

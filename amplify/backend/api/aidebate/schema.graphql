@@ -1,0 +1,23 @@
+type DebateTopic @model @searchable @auth(rules: [{allow: public}, {allow: private}]) {
+  id: ID!
+  topic: String!
+}
+
+
+type DebateInteraction @model @searchable @auth(rules: [{allow: public}, {allow: private}]) {
+  id: ID!
+  debateTopic: DebateTopic! @hasOne
+  username: String!
+  msg: String!
+  round: Int
+  side: String
+}
+
+
+type DebateScore @model @searchable @auth(rules: [{allow: public}, {allow: private}]) {
+  id: ID!
+  debateTopic: DebateTopic! @hasOne
+  judgeDecision: DebateTopic!
+  winningTeam: String!
+}
+

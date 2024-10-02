@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input,
+select {
+  @apply !border !border-neutral-300 !rounded-md !shadow-sm;
+  @apply disabled:opacity-50;
+  @apply text-neutral-700;
+}
+
+table {
+  @apply w-full rounded-md overflow-hidden;
+}
+
+table > thead {
+  @apply bg-neutral-50;
+  @apply border-b border-neutral-200;
+}
+
+table > thead > tr > th {
+  @apply px-4 py-2 text-left;
+  @apply text-sm font-semibold text-neutral-500;
+  @apply truncate overflow-auto;
+  @apply whitespace-nowrap;
+}
+
+table > tfoot {
+  @apply bg-neutral-50;
+  @apply border-t border-neutral-200;
+}
+
+table > tbody > tr {
+  @apply h-6;
+}
+
+table > tfoot > tr > td {
+  @apply px-4 py-2;
+}
+
+table > tbody > tr > td {
+  @apply h-6;
+  @apply px-4 py-2 whitespace-nowrap text-sm text-neutral-500;
+}
+table > tbody > tr {
+  @apply align-baseline;
+}
+
+table > tbody > tr:nth-child(odd) {
+  @apply bg-gray-100;
+}
+
+table > tbody > tr:nth-child(even) {
+  @apply bg-white;
+}
+
+
+.h1 {
+  @apply text-3xl font-bold;
+  @apply text-neutral-900;
+}
+
+.h2 {
+  @apply text-2xl font-bold;
+  @apply text-neutral-900;
+}
+
+.h3 {
+  @apply text-xl font-bold;
+  @apply text-neutral-900;
+}
