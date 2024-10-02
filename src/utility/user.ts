@@ -225,8 +225,8 @@ export async function userLoginCheck (router: any, USER: User, setUSER: (user: U
     //console.log ('updatedUser.errors: ' + updatedUser.errors  )
     if (updatedUser.errors.indexOf ('Login required') !== -1) {
       
-      if (mode === 'ForceLogin')
-        router.push('/login/google');
+      //if (mode === 'ForceLogin')
+      //  router.push('/login/google');
     }
     else
     {

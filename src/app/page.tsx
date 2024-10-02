@@ -25,6 +25,32 @@ export default function Home() {
   const [negativePoints, setNegativePoints] = useState<string[]>([]);
   const [debateFinished, setDebateFinished] = useState<boolean>(false);
 
+
+   useEffect(() => {
+    if (!USER || USER?.userId === '') {
+      const signInUser = async () => {
+        try {
+          const username = process.env.NEXT_PUBLIC_LOGIH_USER;
+          const ps = process.env.NEXT_PUBLIC_LOGIH_PS;
+  
+  
+          if (username && ps) {
+            await signIn({ username: username, password: ps });
+  
+            if (typeof window !== "undefined") {
+              if (window.location)
+                window.location.reload(); // This will now only run on the client
+            }
+          }
+        } catch (error) {
+          console.error('User already signed in');
+        }
+      };
+  
+      signInUser();
+    }
+  }, [USER]); 
+
   useEffect(() => {
     const loadDebateTopics = async () => {
       try {
@@ -73,7 +99,7 @@ export default function Home() {
 
   };
 
-  if (!USER || USER?.userId === '') { //must login to see the content
+  /* if (!USER || USER?.userId === '') { //must login to see the content
     const signInUser = async () => {
      // const currentUser = await getCurrentUser();  
       //console.log ('USER: ' + JSON.stringify(currentUser));
@@ -91,8 +117,10 @@ export default function Home() {
         if (username && ps) {
 
           await signIn({ username: username, password: ps });
-
-          window.location.reload();
+       
+          if (typeof window !== "undefined") {
+            window.location.reload(); // This will now only run on the client
+          }
         }
 
 
@@ -104,7 +132,7 @@ export default function Home() {
 
     signInUser();
     return <div className='flex flex-1 justify-center items-center text-4xl font-extrabold'>Loading...</div>;
-  }
+  } */
 
   return (
   <main className='flex flex-col flex-1 gap-4 w-full h-full'>

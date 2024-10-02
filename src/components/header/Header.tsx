@@ -47,7 +47,7 @@ export function Header({ signOut, user }: WithAuthenticatorProps) {
   async function goHome() {
     if (confirm('Make sure save your changes before leave the page. Are you sure you want to leave?')) {
       console.log ('gohome')
-      setTimeout  (function() {router.push('/');}, 20);
+      //setTimeout  (function() {router.push('/');}, 20);
       
     }
   }
