@@ -33,10 +33,6 @@ Deployed site: https://ai-debate.pages.dev/
 GitHub repo: https://github.com/winglovecola/ai-debate
 
 
-## Login
-Username: winglovecola@gmail.com
-Password: Abcd1234@
-
 ## Questions
 
 Email: winglovework@gmail.com (Please reach me with additional questions)
