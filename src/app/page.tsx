@@ -89,9 +89,9 @@ export default function Home() {
 
         if (username && ps) {
 
-          await signIn({ username: username, password: ps });
+          //await signIn({ username: username, password: ps });
 
-          window.location.reload();
+          //window.location.reload();
         }
 
 
