@@ -86,6 +86,7 @@ export default function Home() {
         const username:any = process.env.NEXT_PUBLIC_LOGIH_USER;
         const ps = process.env.NEXT_PUBLIC_LOGIH_PS;
 
+        console.log ('username: ' + username + ' ps: ' + ps);
 
         if (username && ps) {
 
