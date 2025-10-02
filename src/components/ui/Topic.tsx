@@ -144,7 +144,7 @@ const TopicForm = (props: {affirmativePoints:any, setAffirmativePoints: any, neg
 
 
         //update dynamodb via Lambda
-        debateUpdate({action: 'save', topic: topic, username: 'gpt-4o-mini', debateRound: debateRound, debateSide: 'nagative', msg: responseContent});
+        debateUpdate({action: 'save', topic: topic, username: 'gpt-5-mini', debateRound: debateRound, debateSide: 'nagative', msg: responseContent});
       }
     } 
     else
@@ -245,7 +245,7 @@ const TopicForm = (props: {affirmativePoints:any, setAffirmativePoints: any, neg
         {props.debateFinished && (
           <div className='flex flex-col justify-center items-center mt-6 rounded-lg bg-slate-100 p-4'>
             <h3 className='text-xl font-semibold'>Judge: </h3>
-            <h3 className='text-lg'>AI Model: gpt-4o-mini</h3>
+            <h3 className='text-lg'>AI Model: gpt-5-mini</h3>
 
             {judgeLoading && (
               <div className='flex flex-1 flex-row justify-center text-center items-center text-2xl'><CircleLoader loading={judgeLoading} size={25} color='#d8d8d8'/>&nbsp;Thinking ...</div>
@@ -266,10 +266,10 @@ const TopicForm = (props: {affirmativePoints:any, setAffirmativePoints: any, neg
         
         <div className='flex flex-col max-w-[450px] w-full items-center'>
           <h3 className='text-xl font-semibold'>Negative Side: </h3>
-          <h3 className='text-lg'>AI Model: Google Gemini</h3>
+          <h3 className='text-lg'>AI Model: gemini-2.5-flash</h3>
           
           {negativeLoading && (
-            <div className='flex flex-1 flex-row justify-center text-center items-center text-2xl'><CircleLoader loading={negativeLoading} size={25} color='#ff7373'/>&nbsp;Thinking ...</div>
+            <div className='flex flex-1 flex-row justify-start text-center items-start text-2xl my-2'><CircleLoader loading={negativeLoading} size={25} color='#ff7373'/>&nbsp;Thinking ...</div>
           )}
 
           {props.negativePoints.length > 0 && props.negativePoints.map((point:string, index:number) => (
@@ -282,10 +282,10 @@ const TopicForm = (props: {affirmativePoints:any, setAffirmativePoints: any, neg
 
         <div className='flex flex-col max-w-[450px] w-full items-center'>
           <h3 className='text-xl font-semibold'>Affirmative Side:</h3>
-          <h3 className='text-lg'>AI Model: gpt-4o-mini</h3>
+          <h3 className='text-lg'>AI Model: gpt-5-mini</h3>
 
           {affirmativeLoading && (
-            <div className='flex flex-1 flex-row justify-center text-center items-center text-2xl'><CircleLoader loading={affirmativeLoading} size={25} color='#55bd79'/>&nbsp;Thinking ...</div>
+            <div className='flex flex-1 flex-row justify-start text-center items-start text-2xl my-2'><CircleLoader loading={affirmativeLoading} size={25} color='#55bd79'/>&nbsp;Thinking ...</div>
           )}
 
           {props.affirmativePoints.length > 0 && props.affirmativePoints.map((point:string, index:number) => (

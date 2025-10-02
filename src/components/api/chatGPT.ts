@@ -5,7 +5,7 @@ export const chatGPT = async (question: string, model?: string) => {
     // Replace with your OpenAI API key
     const OPENAI_API_KEY = process.env.NEXT_PUBLIC_CGTP_KEY;
 
-    let useModel = 'gpt-4o-mini';
+    let useModel = 'gpt-5-mini';
     if (model) {
       useModel = model;
     }
