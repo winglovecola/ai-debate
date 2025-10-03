@@ -30,6 +30,8 @@ export const gemini = async (question: string, model?: string) => {
       responseMimeType: "text/plain",
     };
     
+
+    
     const chatSession = aiModel.startChat({
       generationConfig,
    // safetySettings: Adjust safety settings
